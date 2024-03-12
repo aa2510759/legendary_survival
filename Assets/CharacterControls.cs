@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,10 +10,14 @@ public class CharacterControls : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-
+        Dictionary<string, int> scenes = new Dictionary<string, int>();
+        scenes["Main"] = 0;
+        scenes["Forest"] = 1;
+        scenes["Town"] = 2;
         string objTag = other.gameObject.name;
         Debug.Log("Objtag = " + objTag);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(scenes[objTag]);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
     public Rigidbody2D myRigidbody;
@@ -26,13 +31,15 @@ public class CharacterControls : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Hi");
+        //Debug.Log("Hi");
 
     }
 
     // Update is called once per frame depends on your framerate
     void Update()
     {
+
+
         ProcessInputs(); //CHECKING FOR MOVEMENT INPUT
         //ANDRES CODE
         /*
@@ -89,6 +96,6 @@ public class CharacterControls : MonoBehaviour
 
     void Move()
     {
-        myRigidbody.velocity = new Vector2(moveDirection.x * Speed, moveDirection.y * Speed);
+        myRigidbody.velocity = new Vector2(moveDirection.x * Speed, moveDirection.y * Speed) * Time.deltaTime;
     }
 }

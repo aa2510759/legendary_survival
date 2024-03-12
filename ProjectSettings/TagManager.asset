@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - forrest trigger
-  - Forest Trigger
+  - Forest
+  - Town
+  - Main
   layers:
   - Default
   - TransparentFX
