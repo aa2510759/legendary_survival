@@ -17,18 +17,25 @@ public class CharacterControls : MonoBehaviour
     }
     public Rigidbody2D myRigidbody;
     public float Speed;
+
+    private Vector2 moveDirection;
+
     // Start is called before the first frame update
     private string userInput;
 
 
     void Start()
     {
-        //Debug.Log("Hi");
+        Debug.Log("Hi");
+
     }
 
-    // Update is called once per frame
+    // Update is called once per frame depends on your framerate
     void Update()
     {
+        ProcessInputs(); //CHECKING FOR MOVEMENT INPUT
+        //ANDRES CODE
+        /*
         userInput = Input.inputString;
         switch (userInput)
         {
@@ -48,6 +55,40 @@ public class CharacterControls : MonoBehaviour
                 //Debug.Log("Moving right");
                 myRigidbody.velocity = Vector2.right * Speed;
                 break;
+
+             default:
+                myRigidbody.velocity = Vector2.zero;
+                break;
+
         }
+    */
+
+
+
+
+    }
+
+    //NOTE: FIXEDUPDATED GETS CALLED A SET AMOUNT OF TIMES DOESNT DEPEND ON YOUR FRAMERATE LIKE UPDATE THIS IS USUALLY USED FOR PHSYIC CALUACTIONS 
+
+    void FixedUpdate()
+    {
+        Move(); //APPLYING MOVEMENT IF INPUT WAS DETECTED
+    }
+
+
+    void ProcessInputs()
+    {
+        float moveX = Input.GetAxisRaw("Horizontal"); //CHECKING FOR A OR D INPUTS 
+        float moveY = Input.GetAxisRaw("Vertical"); //CHECKING FOR S OR W INPUTS 
+
+        moveDirection = new Vector2(moveX, moveY).normalized;  //normalized simply Returns this vector with a magnitude of 1 EX:without it 
+
+    }
+
+
+
+    void Move()
+    {
+        myRigidbody.velocity = new Vector2(moveDirection.x * Speed, moveDirection.y * Speed);
     }
 }
