@@ -14,11 +14,10 @@ public class CharacterControls : MonoBehaviour
         scenes["Main"] = 0;
         scenes["Forest"] = 1;
         scenes["Town"] = 2;
+        scenes["City"] = 3;
         string objTag = other.gameObject.name;
         Debug.Log("Objtag = " + objTag);
         SceneManager.LoadScene(scenes[objTag]);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
     }
     public Rigidbody2D myRigidbody;
     public float Speed;
