@@ -5,11 +5,15 @@ using UnityEngine.UI;
 
 public class MenuLogic : MonoBehaviour
 {
-    public GameObject button;
+    public GameObject charcter;
+    public GameObject panel;
     public void display()
     {
-        //Debug.Log("not done yet...");
-        button.SetActive(true);
+        if (panel != null)
+        {
+            if (panel.activeSelf) panel.SetActive(false);
+            else panel.SetActive(true);
+        }
 
     }
     // Start is called before the first frame update

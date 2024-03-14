@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 594882098898460822}
   - component: {fileID: 5877328283810316096}
   - component: {fileID: 5444005173347722347}
-  - component: {fileID: 1028313083072194}
+  - component: {fileID: 5657853019291018103}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -184,12 +184,15 @@ MonoBehaviour:
     PlayerPos:
       X: 0
       Y: 0
---- !u!45 &1028313083072194
-Skybox:
+--- !u!114 &5657853019291018103
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7026562657105452264}
   m_Enabled: 1
-  m_CustomSkybox: {fileID: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17597a17b9ba64a4789c0b664284add8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
