@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class CharacterControls : MonoBehaviour
 {
+    public MenuLogic menu;
+    public MainLogic logic;
     private void OnTriggerEnter2D(Collider2D other)
     {
         Dictionary<string, int> scenes = new Dictionary<string, int>();
@@ -30,14 +32,13 @@ public class CharacterControls : MonoBehaviour
 
     void Start()
     {
-        //Debug.Log("Hi");
+        menu = GameObject.FindGameObjectWithTag("Menu").GetComponent<MenuLogic>();
 
     }
 
     // Update is called once per frame depends on your framerate
     void Update()
     {
-
 
         ProcessInputs(); //CHECKING FOR MOVEMENT INPUT
         //ANDRES CODE
@@ -68,10 +69,6 @@ public class CharacterControls : MonoBehaviour
 
         }
     */
-
-
-
-
     }
 
     //NOTE: FIXEDUPDATED GETS CALLED A SET AMOUNT OF TIMES DOESNT DEPEND ON YOUR FRAMERATE LIKE UPDATE THIS IS USUALLY USED FOR PHSYIC CALUACTIONS 
@@ -84,10 +81,18 @@ public class CharacterControls : MonoBehaviour
 
     void ProcessInputs()
     {
+
         float moveX = Input.GetAxisRaw("Horizontal"); //CHECKING FOR A OR D INPUTS 
         float moveY = Input.GetAxisRaw("Vertical"); //CHECKING FOR S OR W INPUTS 
 
         moveDirection = new Vector2(moveX, moveY).normalized;  //normalized simply Returns this vector with a magnitude of 1 EX:without it 
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Debug.Log("call menu function...");
+            menu.display();
+            //logic.displayMenu();
+        }
 
     }
 

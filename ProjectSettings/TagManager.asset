@@ -8,6 +8,8 @@ TagManager:
   - Town
   - Main
   - City
+  - Menu
+  - Button
   layers:
   - Default
   - TransparentFX
