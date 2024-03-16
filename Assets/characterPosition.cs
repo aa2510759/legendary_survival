@@ -1,5 +1,4 @@
 using System;
-
 using UnityEngine;
 
 public class characterPosition : MonoBehaviour
@@ -10,10 +9,8 @@ public class characterPosition : MonoBehaviour
 
     public void Save()
     {
-
         playerData.PlayerPos.X = transform.position.x;
         playerData.PlayerPos.Y = transform.position.y;
-
 
         CloudSaving.SaveData(playerData, "PlayerData");
         Debug.Log("Saved Data");
@@ -31,8 +28,6 @@ public class characterPosition : MonoBehaviour
         Debug.Log("loaded data");
     }
 }
-
-
 
 
 [Serializable]

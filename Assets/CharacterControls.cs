@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 public class CharacterControls : MonoBehaviour
 {
     public MenuLogic menu;
-    public MainLogic logic;
     private void OnTriggerEnter2D(Collider2D other)
     {
         Dictionary<string, int> scenes = new Dictionary<string, int>();
@@ -17,9 +16,10 @@ public class CharacterControls : MonoBehaviour
         scenes["Forest"] = 1;
         scenes["Town"] = 2;
         scenes["City"] = 3;
-        string objTag = other.gameObject.name;
+        string objTag = other.gameObject.tag;
         Debug.Log("Objtag = " + objTag);
-        SceneManager.LoadScene(scenes[objTag]);
+        if (objTag == "Apple") { VariableManager.hunger += 200; }
+        else SceneManager.LoadScene(scenes[objTag]);
     }
     public Rigidbody2D myRigidbody;
     public float Speed;
@@ -33,42 +33,12 @@ public class CharacterControls : MonoBehaviour
     void Start()
     {
         menu = GameObject.FindGameObjectWithTag("Menu").GetComponent<MenuLogic>();
-
     }
 
     // Update is called once per frame depends on your framerate
     void Update()
     {
-
         ProcessInputs(); //CHECKING FOR MOVEMENT INPUT
-        //ANDRES CODE
-        /*
-        userInput = Input.inputString;
-        switch (userInput)
-        {
-            case "w":
-                //Debug.Log("Moving up");
-                myRigidbody.velocity = Vector2.up * Speed;
-                break;
-            case "a":
-                //Debug.Log("Moving left");
-                myRigidbody.velocity = Vector2.left * Speed;
-                break;
-            case "s":
-                //Debug.Log("Moving down");
-                myRigidbody.velocity = Vector2.down * Speed;
-                break;
-            case "d":
-                //Debug.Log("Moving right");
-                myRigidbody.velocity = Vector2.right * Speed;
-                break;
-
-             default:
-                myRigidbody.velocity = Vector2.zero;
-                break;
-
-        }
-    */
     }
 
     //NOTE: FIXEDUPDATED GETS CALLED A SET AMOUNT OF TIMES DOESNT DEPEND ON YOUR FRAMERATE LIKE UPDATE THIS IS USUALLY USED FOR PHSYIC CALUACTIONS 
@@ -91,12 +61,8 @@ public class CharacterControls : MonoBehaviour
         {
             Debug.Log("call menu function...");
             menu.display();
-            //logic.displayMenu();
         }
-
     }
-
-
 
     void Move()
     {

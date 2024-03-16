@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 594882098898460822}
   - component: {fileID: 5877328283810316096}
   - component: {fileID: 5444005173347722347}
-  - component: {fileID: 5657853019291018103}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -164,7 +163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 0}
-  logic: {fileID: 0}
   myRigidbody: {fileID: 5940240053135723673}
   Speed: 1000
 --- !u!114 &5444005173347722347
@@ -184,15 +182,3 @@ MonoBehaviour:
     PlayerPos:
       X: 0
       Y: 0
---- !u!114 &5657853019291018103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7026562657105452264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17597a17b9ba64a4789c0b664284add8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
