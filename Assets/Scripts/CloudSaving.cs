@@ -19,9 +19,7 @@ public class CloudSaving : MonoBehaviour
     {
         try
         {
-
             await UnityServices.InitializeAsync();
-
             await SignInAnonymouslyAsync();
         }
         catch (Exception e)
@@ -38,10 +36,10 @@ public class CloudSaving : MonoBehaviour
         try
         {
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
-            Debug.Log("Sign in anonymously succeeded!");
+            //  Debug.Log("Sign in anonymously succeeded!");
 
             // Shows how to get the playerID
-            Debug.Log($"PlayerID: {AuthenticationService.Instance.PlayerId}");
+            //  Debug.Log($"PlayerID: {AuthenticationService.Instance.PlayerId}");
 
         }
         catch (AuthenticationException ex)

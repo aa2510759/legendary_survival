@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class VariableManager : MonoBehaviour
 {
-    public GameObject prefab;
-
     public static VariableManager instance;
 
     // Start is called before the first frame update
+
+    public static string spriteChoice;
     public static float hp = 100;
     public static float hunger = 90;
     public static float speed = 80;
@@ -25,7 +25,6 @@ public class VariableManager : MonoBehaviour
 
     void Awake()
     {
-
         if (instance == null)
         {
             instance = this;

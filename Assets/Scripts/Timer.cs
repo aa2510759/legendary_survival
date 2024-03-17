@@ -34,7 +34,7 @@ public class Timer : MonoBehaviour
             yield return new WaitForSeconds(timerInterval);
             VariableManager.hunger--;
             float hunger = VariableManager.hunger;
-            Debug.Log("Hunger: " + hunger);
+            //Debug.Log("Hunger: " + hunger);
         }
     }
 }

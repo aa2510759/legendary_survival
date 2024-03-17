@@ -29,10 +29,24 @@ public class CharacterControls : MonoBehaviour
     // Start is called before the first frame update
     private string userInput;
 
+    public Sprite Hunter;
+    public Sprite Mercenary;
+    public Sprite Cop;
 
     void Start()
     {
+        Dictionary<string, Sprite> sprites = new Dictionary<string, Sprite>();
+
         menu = GameObject.FindGameObjectWithTag("Menu").GetComponent<MenuLogic>();
+        sprites["Hunter"] = Hunter;
+        sprites["Mercenary"] = Mercenary;
+        sprites["Cop"] = Cop;
+        if (gameObject != null)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[VariableManager.spriteChoice]; ;
+        }
+        else Debug.Log("gameObject not found..");
+
     }
 
     // Update is called once per frame depends on your framerate

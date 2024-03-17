@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5444005173347722347}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,6 +165,9 @@ MonoBehaviour:
   menu: {fileID: 0}
   myRigidbody: {fileID: 5940240053135723673}
   Speed: 1000
+  Hunter: {fileID: 21300000, guid: 6fdff5adca324234db4d6b265533c19e, type: 3}
+  Mercenary: {fileID: 21300000, guid: c8ff91763b21c5f42922ab94e7b44687, type: 3}
+  Cop: {fileID: 21300000, guid: 1096e2b2be9c2cb4097ab0c9fe37e4bf, type: 3}
 --- !u!114 &5444005173347722347
 MonoBehaviour:
   m_ObjectHideFlags: 0

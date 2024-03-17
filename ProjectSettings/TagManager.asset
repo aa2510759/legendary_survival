@@ -11,6 +11,9 @@ TagManager:
   - Menu
   - Button
   - Apple
+  - Cop
+  - Mercenary
+  - Hunter
   layers:
   - Default
   - TransparentFX

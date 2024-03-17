@@ -4,7 +4,6 @@ using UnityEngine;
 public class characterPosition : MonoBehaviour
 {
     [SerializeField] private PlayerData playerData;
-
     [ContextMenu("Save")]
 
     public void Save()
@@ -28,7 +27,6 @@ public class characterPosition : MonoBehaviour
         Debug.Log("loaded data");
     }
 }
-
 
 [Serializable]
 public struct PlayerData
