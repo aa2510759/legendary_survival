@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VariableManager : MonoBehaviour
 {
+    public GameObject prefab;
+
     public static VariableManager instance;
+
     // Start is called before the first frame update
     public static float hp = 100;
     public static float hunger = 90;
-
     public static float speed = 80;
 
     public static float defense = 70;
@@ -21,6 +25,7 @@ public class VariableManager : MonoBehaviour
 
     void Awake()
     {
+
         if (instance == null)
         {
             instance = this;

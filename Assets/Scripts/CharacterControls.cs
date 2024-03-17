@@ -12,10 +12,10 @@ public class CharacterControls : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Dictionary<string, int> scenes = new Dictionary<string, int>();
-        scenes["Main"] = 0;
-        scenes["Forest"] = 1;
-        scenes["Town"] = 2;
-        scenes["City"] = 3;
+        scenes["Main"] = 1;
+        scenes["Forest"] = 2;
+        scenes["Town"] = 3;
+        scenes["City"] = 4;
         string objTag = other.gameObject.tag;
         Debug.Log("Objtag = " + objTag);
         if (objTag == "Apple") { VariableManager.hunger += 200; }
