@@ -13,7 +13,7 @@ public class VariableManager : MonoBehaviour
 
     public static string spriteChoice;
     public static float hp = 100;
-    public static float hunger = 90;
+    public static float hunger = 10;
     public static float speed = 80;
 
     public static float defense = 70;

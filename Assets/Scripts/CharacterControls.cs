@@ -18,7 +18,7 @@ public class CharacterControls : MonoBehaviour
         scenes["City"] = 4;
         string objTag = other.gameObject.tag;
         Debug.Log("Objtag = " + objTag);
-        if (objTag == "Apple") { VariableManager.hunger += 200; }
+        if (objTag == "Apple") { VariableManager.hunger += 5; }
         else SceneManager.LoadScene(scenes[objTag]);
     }
     public Rigidbody2D myRigidbody;
