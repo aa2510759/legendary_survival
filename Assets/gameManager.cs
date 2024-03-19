@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,15 +21,18 @@ public class gameManager : MonoBehaviour
     }
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (VariableManager.hunger <= 0)
+        if (VariableManager.hunger == 0)
         {
+
+            UnityEngine.Debug.Log("You died...");
+            VariableManager.hunger = 10;
             SceneManager.LoadScene(0);
+
         }
     }
 }

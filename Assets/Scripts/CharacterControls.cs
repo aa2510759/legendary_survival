@@ -69,7 +69,7 @@ public class CharacterControls : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            Debug.Log("call menu function...");
+
             menu.display();
         }
     }

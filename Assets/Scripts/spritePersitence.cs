@@ -7,12 +7,12 @@ public class spritePersitence : MonoBehaviour
     public static GameObject instance;
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = gameObject;
-            DontDestroyOnLoad(gameObject);
-        }
-        else Destroy(gameObject);
+        // if (instance == null)
+        // {
+        //     instance = gameObject;
+        //     DontDestroyOnLoad(gameObject);
+        // }
+        // else Destroy(gameObject);
     }
     // Start is called before the first frame update
     void Start()

@@ -2,22 +2,28 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
+
     public static Timer instance;
+
+
 
     public float timerInterval = 5f;
     private float timer; // Timer to keep track of elapsed time
 
     void Awake()
     {
+
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
         else Destroy(this.gameObject);
+
     }
     void Start()
     {
@@ -28,13 +34,22 @@ public class Timer : MonoBehaviour
     // Coroutine to check ticks every n seconds
     IEnumerator TimerCheck()
     {
-        while (true)
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        while (currentSceneIndex != 0)
         {
             // Wait for the specified time interval
             yield return new WaitForSeconds(timerInterval);
             VariableManager.hunger--;
-            float hunger = VariableManager.hunger;
-            //Debug.Log("Hunger: " + hunger);
+
+        }
+    }
+
+    void Update()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (currentSceneIndex == 0)
+        {
+            VariableManager.hunger = 10;
         }
     }
 }

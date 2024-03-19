@@ -362,19 +362,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 356546358}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 960763705}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Main Room
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &356546358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,6 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 356546357}
+  loader: {fileID: 960763705}
 --- !u!1 &436561122
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,19 +498,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 436561125}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 960763705}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Main Room
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &436561125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 436561124}
+  loader: {fileID: 960763705}
 --- !u!1 &459450731
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,19 +888,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 669569124}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 960763705}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Main Room
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &669569124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,6 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 669569123}
+  loader: {fileID: 960763705}
 --- !u!1 &868499943
 GameObject:
   m_ObjectHideFlags: 0
