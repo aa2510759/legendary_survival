@@ -28,10 +28,9 @@ public class gameManager : MonoBehaviour
     {
         if (VariableManager.hunger == 0)
         {
-
             UnityEngine.Debug.Log("You died...");
             VariableManager.hunger = 10;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(5);
 
         }
     }

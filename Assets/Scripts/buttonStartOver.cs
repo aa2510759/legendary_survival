@@ -4,7 +4,7 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class buttonSpriteChanger : MonoBehaviour
+public class buttonStartOver : MonoBehaviour
 {
     public Button button;
     public SceneLoader loader;
@@ -15,9 +15,6 @@ public class buttonSpriteChanger : MonoBehaviour
     }
     public void OnButtonClick()
     {
-        string parentTag = transform.parent.gameObject.tag;
-        VariableManager.spriteChoice = parentTag;
-        UnityEngine.Debug.Log(parentTag);
-        loader.LoadScene("Main Room");
+        loader.LoadScene("Character Select");
     }
 }

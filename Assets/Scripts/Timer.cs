@@ -16,7 +16,11 @@ public class Timer : MonoBehaviour
 
     void Awake()
     {
-
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (currentSceneIndex == 5)
+        {
+            Destroy(this.gameObject);
+        }
         if (instance == null)
         {
             instance = this;
