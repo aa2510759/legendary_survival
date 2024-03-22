@@ -66,7 +66,6 @@ public class CharacterControls : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-
             menu.display();
         }
     }

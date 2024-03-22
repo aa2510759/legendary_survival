@@ -8,6 +8,8 @@ public class gameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static gameManager instance;
+
+    public GameObject varman;
     void Awake()
     {
         if (instance == null)
@@ -30,7 +32,8 @@ public class gameManager : MonoBehaviour
             UnityEngine.Debug.Log("You died...");
             VariableManager.hunger = 10;
             SceneManager.LoadScene(5);
-
+            varman = GameObject.FindWithTag("Variable Manager");
+            Destroy(varman);
         }
     }
 }

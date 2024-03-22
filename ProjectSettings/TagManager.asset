@@ -15,6 +15,7 @@ TagManager:
   - Mercenary
   - Hunter
   - Main Room
+  - Variable Manager
   layers:
   - Default
   - TransparentFX

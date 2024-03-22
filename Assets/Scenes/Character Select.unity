@@ -1052,6 +1052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f90650c80135f43bf2be08b9ad91b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  varman: {fileID: 0}
 --- !u!4 &950948551
 Transform:
   m_ObjectHideFlags: 0
@@ -1440,10 +1441,10 @@ GameObject:
   - component: {fileID: 1696233514}
   m_Layer: 0
   m_Name: VariableManager
-  m_TagString: Untagged
+  m_TagString: Variable Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!114 &1696233514
 MonoBehaviour:
@@ -1634,6 +1635,6 @@ SceneRoots:
   - {fileID: 1372829483}
   - {fileID: 654915278}
   - {fileID: 1332800835}
-  - {fileID: 960763706}
   - {fileID: 1696233515}
   - {fileID: 950948551}
+  - {fileID: 960763706}

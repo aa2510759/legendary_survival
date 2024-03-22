@@ -50,34 +50,56 @@ public class VariableManager : MonoBehaviour
 {
     public static VariableManager instance;
 
-    Player Hunter = new Player("", "Hunter", 80, 80, 80, 80, 80, 80);
-    Player Mercenary = new Player("", "Mercenary", 90, 90, 90, 90, 90, 90);
-
-    Player Cop = new Player("", "Cop", 70, 70, 70, 70, 70, 70);
-
-
-    // Start is called before the first frame update
-
+    Player Hunter = new Player("", "Hunter", 80, 5, 80, 80, 80, 80);
+    Player Mercenary = new Player("", "Mercenary", 90, 5, 90, 90, 90, 90);
+    Player Cop = new Player("", "Cop", 70, 5, 70, 70, 70, 70);
 
     public static string spriteChoice;
     public static float hp = 100;
-
-
     public static float hunger = 10;
-
-
     public static float speed = 80;
-
     public static float defense = 70;
-
-
     public static float attack = 60;
-
     public static float gold = 50;
-
-
     public static float x = 0;
     public static float y = 0;
+
+
+    void decideClass()
+    {
+        if (buttonSpriteChanger.spriteTag == "Hunter")
+        {
+
+            hp = Hunter.getHp();
+            attack = Hunter.getAttack();
+            defense = Hunter.getDefense();
+            speed = Hunter.getSpeed();
+            gold = Hunter.getGold();
+            hunger = Hunter.getHunger();
+        }
+
+        if (buttonSpriteChanger.spriteTag == "Mercenary")
+        {
+
+            hp = Mercenary.getHp();
+            attack = Mercenary.getAttack();
+            defense = Mercenary.getDefense();
+            speed = Mercenary.getSpeed();
+            gold = Mercenary.getGold();
+            hunger = Mercenary.getHunger();
+        }
+
+        if (buttonSpriteChanger.spriteTag == "Cop")
+        {
+
+            hp = Cop.getHp();
+            attack = Cop.getAttack();
+            defense = Cop.getDefense();
+            speed = Cop.getSpeed();
+            gold = Cop.getGold();
+            hunger = Cop.getHunger();
+        }
+    }
 
     void Awake()
     {
@@ -91,41 +113,12 @@ public class VariableManager : MonoBehaviour
 
     void Start()
     {
-        if (buttonSpriteChanger.spriteTag == "Hunter")
-        {
-            spriteChoice = buttonSpriteChanger.spriteTag;
-            hp = Hunter.getHp();
-            attack = Hunter.getAttack();
-            defense = Hunter.getDefense();
-            speed = Hunter.getSpeed();
-            gold = Hunter.getGold();
-            hunger = Hunter.getHunger();
-        }
-
-        if (buttonSpriteChanger.spriteTag == "Mercenary")
-        {
-            spriteChoice = buttonSpriteChanger.spriteTag;
-            hp = Mercenary.getHp();
-            attack = Mercenary.getAttack();
-            defense = Mercenary.getDefense();
-            speed = Mercenary.getSpeed();
-            gold = Mercenary.getGold();
-            hunger = Mercenary.getHunger();
-        }
-
-        if (buttonSpriteChanger.spriteTag == "Cop")
-        {
-            spriteChoice = buttonSpriteChanger.spriteTag;
-            hp = Cop.getHp();
-            attack = Cop.getAttack();
-            defense = Cop.getDefense();
-            speed = Cop.getSpeed();
-            gold = Cop.getGold();
-            hunger = Cop.getHunger();
-        }
+        spriteChoice = buttonSpriteChanger.spriteTag;
+        decideClass();
     }
     void Update()
     {
+        //spriteChoice = buttonSpriteChanger.spriteTag;
         x = transform.position.x;
         y = transform.position.y;
     }
