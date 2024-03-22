@@ -57,10 +57,8 @@ public class CharacterControls : MonoBehaviour
         Move(); //APPLYING MOVEMENT IF INPUT WAS DETECTED
     }
 
-
     void ProcessInputs()
     {
-
         float moveX = Input.GetAxisRaw("Horizontal"); //CHECKING FOR A OR D INPUTS 
         float moveY = Input.GetAxisRaw("Vertical"); //CHECKING FOR S OR W INPUTS 
 

@@ -8,14 +8,7 @@ public class AppleScript : MonoBehaviour
 
     void OnTriggerEnter2D()
     {
-        Debug.Log("Were in!");
         Destroy(gameObject);
-        // Check if the colliding GameObject has a specific tag (optional)
-        // if (other.CompareTag("Player"))
-        // {
-        //     // Destroy the GameObject attached to this script
-        //     Destroy(gameObject);
-        // }
     }
 
     void Awake()

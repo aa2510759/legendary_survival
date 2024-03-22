@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class gameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-
-
     public static gameManager instance;
     void Awake()
     {
@@ -21,6 +19,7 @@ public class gameManager : MonoBehaviour
     }
     void Start()
     {
+
     }
 
     // Update is called once per frame

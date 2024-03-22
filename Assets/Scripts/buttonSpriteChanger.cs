@@ -9,15 +9,19 @@ public class buttonSpriteChanger : MonoBehaviour
     public Button button;
     public SceneLoader loader;
 
+    public GameObject VariableManager;
+
+    public static string spriteTag;
+
     void Start()
     {
         button.onClick.AddListener(OnButtonClick);
     }
     public void OnButtonClick()
     {
-        string parentTag = transform.parent.gameObject.tag;
-        VariableManager.spriteChoice = parentTag;
-        UnityEngine.Debug.Log(parentTag);
+        spriteTag = transform.parent.gameObject.tag;
+        VariableManager.SetActive(true);
+        UnityEngine.Debug.Log(spriteTag);
         loader.LoadScene("Main Room");
     }
 }

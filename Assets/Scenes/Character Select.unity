@@ -415,6 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 356546357}
   loader: {fileID: 960763705}
+  VariableManager: {fileID: 1696233513}
 --- !u!1 &436561122
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 436561124}
   loader: {fileID: 960763705}
+  VariableManager: {fileID: 1696233513}
 --- !u!1 &459450731
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,6 +943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 669569123}
   loader: {fileID: 960763705}
+  VariableManager: {fileID: 1696233513}
 --- !u!1 &868499943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,7 +1444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1696233514
 MonoBehaviour:
   m_ObjectHideFlags: 0
