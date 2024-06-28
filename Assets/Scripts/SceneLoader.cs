@@ -5,6 +5,13 @@ using System.Collections.Generic;
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader instance;
+
+    public void Start()
+    {
+        Time.timeScale = 1;
+    }
+
+
     void Awake()
     {
         if (instance == null)

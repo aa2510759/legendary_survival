@@ -50,9 +50,9 @@ public class VariableManager : MonoBehaviour
 {
     public static VariableManager instance;
 
-    Player Hunter = new Player("", "Hunter", 80, 5, 80, 80, 80, 80);
-    Player Mercenary = new Player("", "Mercenary", 90, 5, 90, 90, 90, 90);
-    Player Cop = new Player("", "Cop", 70, 5, 70, 70, 70, 70);
+    Player Hunter = new Player("", "Hunter", 80, 10, 80, 80, 80, 80);
+    Player Mercenary = new Player("", "Mercenary", 90, 10, 90, 90, 90, 90);
+    Player Cop = new Player("", "Cop", 70, 10, 70, 70, 70, 70);
 
     public static string spriteChoice;
     public static float hp = 100;

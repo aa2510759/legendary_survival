@@ -9,6 +9,8 @@ public class gameManager : MonoBehaviour
     // Start is called before the first frame update
     public static gameManager instance;
 
+    public static bool isGameEnd = false;
+
     public GameObject varman;
     void Awake()
     {
@@ -21,16 +23,16 @@ public class gameManager : MonoBehaviour
     }
     void Start()
     {
-
+        VariableManager.hunger = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (VariableManager.hunger == 0)
+        if (VariableManager.hunger == 0 && isGameEnd == false)
         {
-            UnityEngine.Debug.Log("You died...");
-            VariableManager.hunger = 10;
+            //  UnityEngine.Debug.Log("You died...");
+            isGameEnd = true;
             SceneManager.LoadScene(5);
             varman = GameObject.FindWithTag("Variable Manager");
             Destroy(varman);
