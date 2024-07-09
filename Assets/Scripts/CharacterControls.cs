@@ -14,6 +14,7 @@ public class CharacterControls : MonoBehaviour
         string objTag = other.gameObject.tag;
         Debug.Log("Objtag = " + objTag);
         if (objTag == "Apple") { VariableManager.hunger += 5; }
+        if (objTag == "Enemy") { VariableManager.hp -= 15; }
         else SceneManager.LoadScene(objTag);
     }
     public Rigidbody2D myRigidbody;

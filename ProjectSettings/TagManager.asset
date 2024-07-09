@@ -16,6 +16,7 @@ TagManager:
   - Hunter
   - Main Room
   - Variable Manager
+  - Enemy
   layers:
   - Default
   - TransparentFX

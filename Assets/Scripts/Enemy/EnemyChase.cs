@@ -14,7 +14,7 @@ public class EnemyChase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -26,12 +26,14 @@ public class EnemyChase : MonoBehaviour
         float angle = Mathf.Atan2(direction.x, direction.x) * Mathf.Rad2Deg;
 
 
-        if(distance < distanceBetween)
+        if (distance < distanceBetween)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(Vector3.forward * angle);
         }
 
-        
+
     }
+
+
 }
