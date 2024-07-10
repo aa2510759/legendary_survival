@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -8,6 +9,8 @@ using UnityEngine.SceneManagement;
 public class CharacterControls : MonoBehaviour
 {
     public MenuLogic menu;
+    public CharacterShoot characterShoot;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         // replaced the dictionary with tags that are identical to the scene names
@@ -31,6 +34,12 @@ public class CharacterControls : MonoBehaviour
 
     void Start()
     {
+        characterShoot = GetComponent<CharacterShoot>();
+
+        if (characterShoot == null)
+        {
+            Debug.Log("Not found :(");
+        }
         Dictionary<string, Sprite> sprites = new Dictionary<string, Sprite>();
 
         menu = GameObject.FindGameObjectWithTag("Menu").GetComponent<MenuLogic>();
@@ -69,12 +78,19 @@ public class CharacterControls : MonoBehaviour
         {
             menu.display();
         }
+
+
+        if (Input.GetMouseButtonDown(0)) // 0 is the left mouse button
+        {
+            //Debug.Log("Insert Shoot here lol");
+            characterShoot.Shoot();
+        }
     }
 
     void Move()
     {
         myRigidbody.velocity = new Vector2(moveDirection.x * (Speed + VariableManager.speed), moveDirection.y * (Speed + VariableManager.speed)) * Time.deltaTime;
-        print("Based Speed: " + Speed +
-            "Speed Buff: " + VariableManager.speed);
+        // print("Based Speed: " + Speed +
+        //   "Speed Buff: " + VariableManager.speed);
     }
 }

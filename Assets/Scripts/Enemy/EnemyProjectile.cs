@@ -13,7 +13,7 @@ public class EnemyProjectile : MonoBehaviour
 
     private GameObject player;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,16 +26,16 @@ public class EnemyProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
 
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
-       print(distance);
+        //print(distance);
 
-        if(distance < 10)
+        if (distance < 10)
         {
             timer += Time.deltaTime;
-            if(timer > 1) //hardcoded number here determines how fast the enemy will shoot
+            if (timer > 1) //hardcoded number here determines how fast the enemy will shoot
             {
 
 

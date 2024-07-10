@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Player
 {
+
     private string name;
     private string character;
     private int hp;

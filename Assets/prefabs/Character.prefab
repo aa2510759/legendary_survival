@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3717013834978463341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3115682449012776158}
+  m_Layer: 0
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3115682449012776158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3717013834978463341}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.1, y: 0.48, z: 0.05704592}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5565833571667834808}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7026562657105452264
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +45,8 @@ GameObject:
   - component: {fileID: 594882098898460822}
   - component: {fileID: 5877328283810316096}
   - component: {fileID: 5444005173347722347}
+  - component: {fileID: -8478328051424353363}
+  - component: {fileID: 5837017844284934241}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -30,10 +63,11 @@ Transform:
   m_GameObject: {fileID: 7026562657105452264}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.3333333, y: 1.9999998, z: 0}
+  m_LocalPosition: {x: 3.333333, y: 1.9999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3115682449012776158}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &945839149379791393
@@ -163,8 +197,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 0}
+  characterShoot: {fileID: 0}
   myRigidbody: {fileID: 5940240053135723673}
-  Speed: 1000
+  Speed: 300
   Hunter: {fileID: 21300000, guid: 6fdff5adca324234db4d6b265533c19e, type: 3}
   Mercenary: {fileID: 21300000, guid: c8ff91763b21c5f42922ab94e7b44687, type: 3}
   Cop: {fileID: 21300000, guid: 1096e2b2be9c2cb4097ab0c9fe37e4bf, type: 3}
@@ -185,3 +220,30 @@ MonoBehaviour:
     PlayerPos:
       X: 0
       Y: 0
+--- !u!114 &-8478328051424353363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7026562657105452264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fa38e141784324d836862eec0ceaee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 4307939436786380647, guid: 82068ec7f0042714eaf7e93b896f7a27, type: 3}
+  shootPoint: {fileID: 3115682449012776158}
+  shootForce: 10
+--- !u!114 &5837017844284934241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7026562657105452264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f012957cfbbb34da73a8e339a7e9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
