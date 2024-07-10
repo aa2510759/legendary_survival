@@ -29,7 +29,7 @@ public class EnemyChase : MonoBehaviour
         if (distance < distanceBetween)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+          //  transform.rotation = Quaternion.Euler(Vector3.forward * angle); //This line will rotate the enemy to face towards the player GameObject while chasing it
         }
 
 

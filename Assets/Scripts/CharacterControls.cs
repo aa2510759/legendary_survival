@@ -15,7 +15,7 @@ public class CharacterControls : MonoBehaviour
         Debug.Log("Objtag = " + objTag);
         if (objTag == "Apple") { VariableManager.hunger += 5; }
         if (objTag == "Enemy") { VariableManager.hp -= 15; }
-        else SceneManager.LoadScene(objTag);
+        else SceneManager.LoadScene(objTag); //this should most likely be in it's own script outside of CharacterControls
     }
     public Rigidbody2D myRigidbody;
     public float Speed;
@@ -73,6 +73,8 @@ public class CharacterControls : MonoBehaviour
 
     void Move()
     {
-        myRigidbody.velocity = new Vector2(moveDirection.x * Speed, moveDirection.y * Speed) * Time.deltaTime;
+        myRigidbody.velocity = new Vector2(moveDirection.x * (Speed + VariableManager.speed), moveDirection.y * (Speed + VariableManager.speed)) * Time.deltaTime;
+        print("Based Speed: " + Speed +
+            "Speed Buff: " + VariableManager.speed);
     }
 }
