@@ -22,18 +22,31 @@ public class gameManager : MonoBehaviour
     }
     void Start()
     {
-        CharacterManager.hunger = 10;
+        // CharacterManager.hunger = 10;
+        // CharacterManager.hp = 100;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (CharacterManager.hunger == 0 && isGameEnd == false)
+        if (CharacterManager.hunger == 0 && !isGameEnd)
         {
-            isGameEnd = true;
-            SceneManager.LoadScene(5);
-            charMan = GameObject.FindWithTag("CharacterManager");
-            Destroy(charMan);
+            EndGame();
         }
+        else if (CharacterManager.hp <= 0 && !isGameEnd)
+        {
+
+            EndGame();
+        }
+
+
+    }
+    void EndGame()
+    {
+        UnityEngine.Debug.Log("Ending Game...");
+        isGameEnd = true;
+        charMan = GameObject.FindWithTag("CharacterManager");
+        Destroy(charMan);
+        SceneManager.LoadScene(5);
+        CharacterManager.hp = 100;
     }
 }

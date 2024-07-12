@@ -56,9 +56,9 @@ public class CharacterManager : MonoBehaviour
 {
     public static CharacterManager instance;
 
-    Player Hunter = new Player("", "Hunter", 200, 80, 1000, 80, 80, 80, 80);
-    Player Mercenary = new Player("", "Mercenary", 150, 90, 1000, 90, 90, 90, 90);
-    Player Cop = new Player("", "Cop", 175, 70, 1000, 70, 70, 70, 70);
+    Player Hunter = new Player("", "Hunter", 200, 80, 10, 80, 80, 80, 80);
+    Player Mercenary = new Player("", "Mercenary", 150, 90, 10, 90, 90, 90, 90);
+    Player Cop = new Player("", "Cop", 175, 70, 10, 70, 70, 70, 70);
 
     public static string spriteChoice;
     public static float maxHP = 100;
@@ -102,6 +102,7 @@ public class CharacterManager : MonoBehaviour
 
     void Start()
     {
+
         spriteChoice = buttonSpriteChanger.spriteTag;
         decideClass();
     }

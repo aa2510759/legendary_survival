@@ -4,6 +4,7 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Debug = UnityEngine.Debug;
 
 public class buttonStartOver : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class buttonStartOver : MonoBehaviour
     }
     public void OnButtonClick()
     {
+        Debug.Log("Loading Character Select...");
         gameManager.isGameEnd = false;
         SceneManager.LoadScene("Character Select");
     }

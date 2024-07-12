@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour
 
 
     public float timerInterval = 5f;
-    private float timer; // Timer to keep track of elapsed time
+
 
     void Awake()
     {
@@ -53,7 +53,8 @@ public class Timer : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         if (currentSceneIndex == 0)
         {
-            CharacterManager.hunger = 10;
+            // CharacterManager.hp = 100;
+            // CharacterManager.hunger = 10;
         }
     }
 }
