@@ -8,6 +8,7 @@ public class Player
 {
     private string name;
     private string character;
+    private int maxHp;
     private int hp;
     private int hunger;
     private int attack;
@@ -15,12 +16,16 @@ public class Player
     private int defense;
     private int gold;
 
+    public static int daysPassed = 0; //making it static and public so we can access it from other scripts
+
     // Class methods
     public void setName(string name) { this.name = name; }
     public string getName() { return name; }
     public void setCharacter(string character) { this.character = character; }
     public string getCharacter() { return character; }
 
+    public void setMaxHp(int maxHp) { this.maxHp = maxHp; }
+    public int getMaxHp() { return maxHp; }
     public void setHp(int hp) { this.hp = hp; }
     public int getHp() { return hp; }
     public void setHunger(int hunger) { this.hunger = hunger; }
@@ -34,10 +39,11 @@ public class Player
     public void setGold(int gold) { this.gold = gold; }
     public int getGold() { return gold; }
 
-    public Player(string name, string character, int hp, int hunger, int attack, int defense, int speed, int gold)
+    public Player(string name, string character, int maxHp, int hp, int hunger, int attack, int defense, int speed, int gold)
     {
         this.name = name;
         this.character = character;
+        this.maxHp = maxHp;
         this.hunger = hunger;
         this.hp = hp;
         this.attack = attack;
@@ -50,11 +56,12 @@ public class CharacterManager : MonoBehaviour
 {
     public static CharacterManager instance;
 
-    Player Hunter = new Player("", "Hunter", 80, 10, 80, 80, 80, 80);
-    Player Mercenary = new Player("", "Mercenary", 90, 1000, 90, 90, 90, 90);
-    Player Cop = new Player("", "Cop", 70, 1000, 70, 70, 70, 70);
+    Player Hunter = new Player("", "Hunter", 200, 80, 1000, 80, 80, 80, 80);
+    Player Mercenary = new Player("", "Mercenary", 150, 90, 1000, 90, 90, 90, 90);
+    Player Cop = new Player("", "Cop", 175, 70, 1000, 70, 70, 70, 70);
 
     public static string spriteChoice;
+    public static float maxHP = 100;
     public static float hp = 100;
     public static float hunger = 10;
     public static float speed = 80;
@@ -79,6 +86,7 @@ public class CharacterManager : MonoBehaviour
                 gold = Classes[i].getGold();
                 hunger = Classes[i].getHunger();
             }
+
         }
     }
 

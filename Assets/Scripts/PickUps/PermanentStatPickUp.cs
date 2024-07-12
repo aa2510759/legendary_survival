@@ -5,6 +5,7 @@ using UnityEngine;
 public class PermanentStatPickUp : MonoBehaviour
 {
     [Header("Type of PickUp")]
+    public bool maxHealth = false;
     public bool health = false;
     public bool hunger = false;
     public bool speed = false;
@@ -15,12 +16,20 @@ public class PermanentStatPickUp : MonoBehaviour
 
 
     [Header("Increase Amount")]
+
+    public int MaxHp = 0;
     public int Hp = 0;
     public int Food = 0;
     public int Sp = 0;
     public int Def = 0;
     public int Atk = 0;
     public int money = 0;
+
+    public void IncreaseMaxHPStat()
+    {
+        CharacterManager.maxHP += MaxHp;
+
+    }
 
     public void IncreaseHPStat()
     {
