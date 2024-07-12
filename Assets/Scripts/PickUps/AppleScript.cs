@@ -11,7 +11,7 @@ public class AppleScript : MonoBehaviour
 
     void Awake()
     {
-        if (CharacterManager.hunger % 2 == 0)
+        if (UnityEngine.Random.Range(0,101) % 2 == 0)
         {
             Destroy(gameObject);
         }

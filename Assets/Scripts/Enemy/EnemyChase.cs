@@ -12,6 +12,7 @@ public class EnemyChase : MonoBehaviour
 
     void Update()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();

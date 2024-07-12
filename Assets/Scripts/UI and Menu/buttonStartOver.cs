@@ -15,8 +15,10 @@ public class buttonStartOver : MonoBehaviour
     }
     public void OnButtonClick()
     {
+        CharacterManager.hp = 100;
         Debug.Log("Loading Character Select...");
         gameManager.isGameEnd = false;
         SceneManager.LoadScene("Character Select");
+
     }
 }

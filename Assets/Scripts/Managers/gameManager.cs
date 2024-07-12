@@ -10,6 +10,9 @@ public class gameManager : MonoBehaviour
 
     public static bool isGameEnd = false;
 
+
+    
+
     public GameObject charMan;
     void Awake()
     {
@@ -22,8 +25,7 @@ public class gameManager : MonoBehaviour
     }
     void Start()
     {
-        // CharacterManager.hunger = 10;
-        // CharacterManager.hp = 100;
+          
     }
 
     void Update()
@@ -42,11 +44,16 @@ public class gameManager : MonoBehaviour
     }
     void EndGame()
     {
+        CharacterManager.hp = 0;
         UnityEngine.Debug.Log("Ending Game...");
         isGameEnd = true;
         charMan = GameObject.FindWithTag("CharacterManager");
         Destroy(charMan);
         SceneManager.LoadScene(5);
-        CharacterManager.hp = 100;
+      
+           
+        
+       
+
     }
 }
