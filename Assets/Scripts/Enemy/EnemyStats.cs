@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public float Health = 50;
+    public float Damage = 10;
     // Update is called once per frame
     void Update()
     {
@@ -22,7 +23,6 @@ public class EnemyStats : MonoBehaviour
         if (objTag == "Player")
         {
             Health -= 25;
-            //Debug.Log("I got hit!!!!!!!!!!!!");
         }
     }
 }

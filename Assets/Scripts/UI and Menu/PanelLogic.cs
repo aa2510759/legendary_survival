@@ -21,12 +21,12 @@ public class PanelLogic : MonoBehaviour
         displaySpeed != null ||
         displayGold != null)
         {
-            float hp = VariableManager.hp;
-            float hunger = VariableManager.hunger;
-            float attack = VariableManager.attack;
-            float defense = VariableManager.defense;
-            float speed = VariableManager.speed;
-            float gold = VariableManager.gold;
+            float hp = CharacterManager.hp;
+            float hunger = CharacterManager.hunger;
+            float attack = CharacterManager.attack;
+            float defense = CharacterManager.defense;
+            float speed = CharacterManager.speed;
+            float gold = CharacterManager.gold;
             displayHp.text = "hp: " + hp.ToString();
             displayHunger.text = "hunger: " + hunger.ToString();
             displayAttack.text = "attack: " + attack.ToString();

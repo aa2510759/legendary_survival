@@ -15,7 +15,7 @@ public class PermanentStatPickUp : MonoBehaviour
 
 
     [Header("Increase Amount")]
-    public int Hp = 0; 
+    public int Hp = 0;
     public int Food = 0;
     public int Sp = 0;
     public int Def = 0;
@@ -24,33 +24,33 @@ public class PermanentStatPickUp : MonoBehaviour
 
     public void IncreaseHPStat()
     {
-        VariableManager.hp += Hp;
-        
+        CharacterManager.hp += Hp;
+
     }
 
     public void IncreaseHungerStat()
     {
-        VariableManager.hunger += Food;
+        CharacterManager.hunger += Food;
     }
 
     public void IncreaseSpeedStat()
     {
-        VariableManager.speed += Sp;
+        CharacterManager.speed += Sp;
     }
 
     public void IncreaseDefenseStat()
     {
-        VariableManager.defense += Def;
+        CharacterManager.defense += Def;
     }
 
     public void IncreaseAttackStat()
     {
-        VariableManager.attack += Atk;
+        CharacterManager.attack += Atk;
     }
 
     public void IncreaseGoldAmount()
     {
-        VariableManager.gold += money;
+        CharacterManager.gold += money;
     }
 
     public void TypeCheck()

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AppleScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     void OnTriggerEnter2D()
     {
         Destroy(gameObject);
@@ -13,19 +11,9 @@ public class AppleScript : MonoBehaviour
 
     void Awake()
     {
-        if (VariableManager.hunger % 2 == 0)
+        if (CharacterManager.hunger % 2 == 0)
         {
             Destroy(gameObject);
         }
-    }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

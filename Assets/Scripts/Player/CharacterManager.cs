@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Player
 {
-
     private string name;
     private string character;
     private int hp;
@@ -47,11 +46,11 @@ public class Player
         this.gold = gold;
     }
 }
-public class VariableManager : MonoBehaviour
+public class CharacterManager : MonoBehaviour
 {
-    public static VariableManager instance;
+    public static CharacterManager instance;
 
-    Player Hunter = new Player("", "Hunter", 80, 1000, 80, 80, 80, 80);
+    Player Hunter = new Player("", "Hunter", 80, 10, 80, 80, 80, 80);
     Player Mercenary = new Player("", "Mercenary", 90, 1000, 90, 90, 90, 90);
     Player Cop = new Player("", "Cop", 70, 1000, 70, 70, 70, 70);
 
@@ -65,40 +64,21 @@ public class VariableManager : MonoBehaviour
     public static float x = 0;
     public static float y = 0;
 
-
     void decideClass()
     {
-        if (buttonSpriteChanger.spriteTag == "Hunter")
+        List<Player> Classes = new List<Player>() { Hunter, Mercenary, Cop };
+        var totalClasses = Classes.Count;
+        for (int i = 0; i < totalClasses; i++)
         {
-
-            hp = Hunter.getHp();
-            attack = Hunter.getAttack();
-            defense = Hunter.getDefense();
-            speed = Hunter.getSpeed();
-            gold = Hunter.getGold();
-            hunger = Hunter.getHunger();
-        }
-
-        if (buttonSpriteChanger.spriteTag == "Mercenary")
-        {
-
-            hp = Mercenary.getHp();
-            attack = Mercenary.getAttack();
-            defense = Mercenary.getDefense();
-            speed = Mercenary.getSpeed();
-            gold = Mercenary.getGold();
-            hunger = Mercenary.getHunger();
-        }
-
-        if (buttonSpriteChanger.spriteTag == "Cop")
-        {
-
-            hp = Cop.getHp();
-            attack = Cop.getAttack();
-            defense = Cop.getDefense();
-            speed = Cop.getSpeed();
-            gold = Cop.getGold();
-            hunger = Cop.getHunger();
+            if (buttonSpriteChanger.spriteTag == Classes[i].getCharacter())
+            {
+                hp = Classes[i].getHp();
+                attack = Classes[i].getAttack();
+                defense = Classes[i].getDefense();
+                speed = Classes[i].getSpeed();
+                gold = Classes[i].getGold();
+                hunger = Classes[i].getHunger();
+            }
         }
     }
 
@@ -119,7 +99,6 @@ public class VariableManager : MonoBehaviour
     }
     void Update()
     {
-        //spriteChoice = buttonSpriteChanger.spriteTag;
         x = transform.position.x;
         y = transform.position.y;
     }

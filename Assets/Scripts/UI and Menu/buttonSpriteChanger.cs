@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class buttonSpriteChanger : MonoBehaviour
 {
     public Button button;
-    public SceneLoader loader;
-
     public GameObject VariableManager;
 
     public static string spriteTag;
@@ -22,6 +21,6 @@ public class buttonSpriteChanger : MonoBehaviour
         spriteTag = transform.parent.gameObject.tag;
         VariableManager.SetActive(true);
         UnityEngine.Debug.Log(spriteTag);
-        loader.LoadScene("Main Room");
+        SceneManager.LoadScene("Main Room");
     }
 }

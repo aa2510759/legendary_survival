@@ -1,5 +1,3 @@
-
-//using System.Diagnostics;
 using System;
 using UnityEngine;
 using Unity.Services.Authentication;
@@ -8,11 +6,6 @@ using Unity.Services.Core;
 using System.Collections.Generic;
 using Unity.Services.CloudSave;
 using Unity.Services.CloudSave.Models;
-
-//using System.Diagnostics.Eventing.Reader;
-//using System.Diagnostics;
-//using System.Diagnostics;
-//using System.Diagnostics.Eventing.Reader;
 public class CloudSaving : MonoBehaviour
 {
     async void Awake()
@@ -28,19 +21,11 @@ public class CloudSaving : MonoBehaviour
         }
     }
 
-
-
-
     async Task SignInAnonymouslyAsync()
     {
         try
         {
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
-            //  Debug.Log("Sign in anonymously succeeded!");
-
-            // Shows how to get the playerID
-            //  Debug.Log($"PlayerID: {AuthenticationService.Instance.PlayerId}");
-
         }
         catch (AuthenticationException ex)
         {
@@ -72,12 +57,6 @@ public class CloudSaving : MonoBehaviour
 
         var data = JsonUtility.FromJson<T>(dataString);
         Debug.Log("Done: " + playerData[key]);
-
-        /*   if (playerData.TryGetValue("keyName", out var keyName))
-           {
-               Debug.Log($"keyName: {keyName.Value.GetAs<string>()}");
-           }*/
-
         return data;
     }
 }

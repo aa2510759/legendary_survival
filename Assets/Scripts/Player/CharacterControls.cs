@@ -10,24 +10,9 @@ public class CharacterControls : MonoBehaviour
 {
     public MenuLogic menu;
     public CharacterShoot characterShoot;
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        // replaced the dictionary with tags that are identical to the scene names
-        string objTag = other.gameObject.tag;
-        Debug.Log("Objtag = " + objTag);
-        if (objTag == "Apple") { VariableManager.hunger += 5; }
-        if (objTag == "Enemy") { VariableManager.hp -= 15; }
-        else SceneManager.LoadScene(objTag); //this should most likely be in it's own script outside of CharacterControls
-    }
     public Rigidbody2D myRigidbody;
     public float Speed;
-
     private Vector2 moveDirection;
-
-    // Start is called before the first frame update
-    private string userInput;
-
     public Sprite Hunter;
     public Sprite Mercenary;
     public Sprite Cop;
@@ -48,13 +33,12 @@ public class CharacterControls : MonoBehaviour
         sprites["Cop"] = Cop;
         if (gameObject != null)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[VariableManager.spriteChoice]; ;
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[CharacterManager.spriteChoice];
         }
         else Debug.Log("gameObject not found..");
 
     }
 
-    // Update is called once per frame depends on your framerate
     void Update()
     {
         ProcessInputs(); //CHECKING FOR MOVEMENT INPUT
@@ -89,8 +73,8 @@ public class CharacterControls : MonoBehaviour
 
     void Move()
     {
-        myRigidbody.velocity = new Vector2(moveDirection.x * (Speed + VariableManager.speed), moveDirection.y * (Speed + VariableManager.speed)) * Time.deltaTime;
+        myRigidbody.velocity = new Vector2(moveDirection.x * (Speed + CharacterManager.speed), moveDirection.y * (Speed + CharacterManager.speed)) * Time.deltaTime;
         // print("Based Speed: " + Speed +
-        //   "Speed Buff: " + VariableManager.speed);
+        //   "Speed Buff: " + CharacterManager.speed);
     }
 }

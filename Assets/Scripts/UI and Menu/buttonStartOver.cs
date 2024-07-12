@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class buttonStartOver : MonoBehaviour
 {
     public Button button;
-    public SceneLoader loader;
-
     void Start()
     {
         button.onClick.AddListener(OnButtonClick);
@@ -16,6 +15,6 @@ public class buttonStartOver : MonoBehaviour
     public void OnButtonClick()
     {
         gameManager.isGameEnd = false;
-        loader.LoadScene("Character Select");
+        SceneManager.LoadScene("Character Select");
     }
 }

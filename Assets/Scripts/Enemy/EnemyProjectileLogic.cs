@@ -20,19 +20,13 @@ public class EnemyProjectileLogic : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            VariableManager.hp -= 5;
+            CharacterManager.hp -= 5;
             //YOU CAN TAKE AWAY HEALTH HERE IDK HOW THO
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

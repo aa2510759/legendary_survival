@@ -43,7 +43,7 @@ public class Timer : MonoBehaviour
         {
             // Wait for the specified time interval
             yield return new WaitForSeconds(timerInterval);
-            VariableManager.hunger--;
+            CharacterManager.hunger--;
 
         }
     }
@@ -53,7 +53,7 @@ public class Timer : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         if (currentSceneIndex == 0)
         {
-            VariableManager.hunger = 10;
+            CharacterManager.hunger = 10;
         }
     }
 }

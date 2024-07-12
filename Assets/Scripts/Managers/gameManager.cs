@@ -6,12 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     public static gameManager instance;
 
     public static bool isGameEnd = false;
 
-    public GameObject varman;
+    public GameObject charMan;
     void Awake()
     {
         if (instance == null)
@@ -23,19 +22,18 @@ public class gameManager : MonoBehaviour
     }
     void Start()
     {
-        VariableManager.hunger = 10;
+        CharacterManager.hunger = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (VariableManager.hunger == 0 && isGameEnd == false)
+        if (CharacterManager.hunger == 0 && isGameEnd == false)
         {
-            //  UnityEngine.Debug.Log("You died...");
             isGameEnd = true;
             SceneManager.LoadScene(5);
-            varman = GameObject.FindWithTag("Variable Manager");
-            Destroy(varman);
+            charMan = GameObject.FindWithTag("CharacterManager");
+            Destroy(charMan);
         }
     }
 }
