@@ -11,7 +11,7 @@ public class gameManager : MonoBehaviour
     public static bool isGameEnd = false;
 
 
-    
+
 
     public GameObject charMan;
     void Awake()
@@ -25,7 +25,7 @@ public class gameManager : MonoBehaviour
     }
     void Start()
     {
-          
+
     }
 
     void Update()
@@ -50,10 +50,8 @@ public class gameManager : MonoBehaviour
         charMan = GameObject.FindWithTag("CharacterManager");
         Destroy(charMan);
         SceneManager.LoadScene(5);
-      
-           
-        
-       
+
+
 
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player
@@ -16,7 +17,6 @@ public class Player
     private int defense;
     private int gold;
 
-    public static int daysPassed = 0; //making it static and public so we can access it from other scripts
 
     // Class methods
     public void setName(string name) { this.name = name; }
@@ -54,6 +54,8 @@ public class Player
 }
 public class CharacterManager : MonoBehaviour
 {
+    public static int daysPassed = 0; //making it static and public so we can access it from other scripts
+
     public static CharacterManager instance;
 
     Player Hunter = new Player("", "Hunter", 200, 80, 10, 80, 80, 80, 80);
@@ -108,6 +110,7 @@ public class CharacterManager : MonoBehaviour
     }
     void Update()
     {
+
         x = transform.position.x;
         y = transform.position.y;
     }

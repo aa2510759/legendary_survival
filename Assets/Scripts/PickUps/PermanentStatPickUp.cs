@@ -33,7 +33,10 @@ public class PermanentStatPickUp : MonoBehaviour
 
     public void IncreaseHPStat()
     {
-        CharacterManager.hp += Hp;
+        if (CharacterManager.maxHP < CharacterManager.hp + Hp)
+        {
+            CharacterManager.hp = CharacterManager.maxHP;
+        }
 
     }
 

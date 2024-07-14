@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PanelLogic : MonoBehaviour
 {
-    public Text displayMaxHp;
     public Text displayHp;
     public Text displayHunger;
     public Text displayAttack;
@@ -16,7 +15,7 @@ public class PanelLogic : MonoBehaviour
 
     void Update()
     {
-        displayDays.text = "Days Passed: " + Player.daysPassed.ToString();
+        displayDays.text = "Days Passed: " + CharacterManager.daysPassed.ToString();
 
         //idk whats happening here in this if statement? why are checking if their not null?
         if (displayHp != null ||
@@ -34,8 +33,8 @@ public class PanelLogic : MonoBehaviour
             float speed = CharacterManager.speed;
             float gold = CharacterManager.gold;
             float maxHp = CharacterManager.maxHP;
-            displayMaxHp.text = "max hp: " + maxHp.ToString();
-            displayHp.text = "hp: " + hp.ToString();
+
+            displayHp.text = "hp: " + hp.ToString() + "/" + maxHp.ToString();
             displayHunger.text = "hunger: " + hunger.ToString();
             displayAttack.text = "attack: " + attack.ToString();
             displayDefense.text = "defense: " + defense.ToString();

@@ -18,12 +18,11 @@ public class CharacterCollisions : MonoBehaviour
         if (objTag == "Apple") { CharacterManager.hunger += 5; }
         else if (objTag == "Enemy") { CharacterManager.hp -= 15; }
         else if (objTag == "Untagged") { Debug.Log("Untagged Collision"); }
-
         else
         {
-           
+
             SceneManager.LoadScene(objTag);
-            Player.daysPassed++;
+            CharacterManager.daysPassed++;
         }
     }
 }
