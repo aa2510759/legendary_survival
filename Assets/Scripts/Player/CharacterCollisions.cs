@@ -5,11 +5,15 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.TextCore.Text;
 
 public class CharacterCollisions : MonoBehaviour
 {
     public MenuLogic menu;
     public CharacterShoot characterShoot;
+    public static bool letsago = false;
+
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,6 +27,16 @@ public class CharacterCollisions : MonoBehaviour
 
             SceneManager.LoadScene(objTag);
             CharacterManager.daysPassed++;
+
+            if (CharacterManager.daysPassed > 5)
+            {
+                CharacterManager.daysPassed = 0;
+                gameManager game = FindObjectOfType<gameManager>();
+                Debug.Log("You win!!!");
+                letsago = true;
+                game.EndGame();
+
+            }
         }
     }
 }

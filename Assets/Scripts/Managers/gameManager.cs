@@ -42,7 +42,7 @@ public class gameManager : MonoBehaviour
 
 
     }
-    void EndGame()
+    public void EndGame()
     {
         CharacterManager.hp = 0;
         UnityEngine.Debug.Log("Ending Game...");
@@ -50,8 +50,5 @@ public class gameManager : MonoBehaviour
         charMan = GameObject.FindWithTag("CharacterManager");
         Destroy(charMan);
         SceneManager.LoadScene(5);
-
-
-
     }
 }

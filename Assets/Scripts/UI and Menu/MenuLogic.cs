@@ -9,11 +9,13 @@ public class MenuLogic : MonoBehaviour
     public GameObject panel;
     public void display()
     {
+
         if (panel != null)
         {
             if (panel.activeSelf) panel.SetActive(false);
             else panel.SetActive(true);
         }
+
 
     }
 }
