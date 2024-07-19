@@ -445,7 +445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ee20343e0282440a641749a407be4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayMaxHp: {fileID: 7605436}
   displayHp: {fileID: 895742948}
   displayHunger: {fileID: 1777473011}
   displayAttack: {fileID: 1096778262}
@@ -665,7 +664,7 @@ PrefabInstance:
     - target: {fileID: 2636005446654863109, guid: 8f44da8dce19a3941a2b61ca43a45165, type: 3}
       propertyPath: panelPause
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4334860939486035457, guid: b7dd2c1fa1da4a340a68a451cef56656, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1abdd64a190ce14e810bb2e461fdff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelPause: {fileID: 0}
+  panelPause: {fileID: 4334860939486035457, guid: b7dd2c1fa1da4a340a68a451cef56656, type: 3}
   isPaused: 0

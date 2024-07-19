@@ -17,6 +17,8 @@ public class CharacterControls : MonoBehaviour
     public Sprite Mercenary;
     public Sprite Cop;
 
+    public SoundManager soundManager;
+
     void Start()
     {
         characterShoot = GetComponent<CharacterShoot>();
@@ -67,6 +69,7 @@ public class CharacterControls : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) // 0 is the left mouse button
         {
             //Debug.Log("Insert Shoot here lol");
+            soundManager.PlayShootSound();
             characterShoot.Shoot();
         }
     }

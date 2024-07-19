@@ -4,23 +4,50 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource soundSource;
+    public AudioSource source;
+    public AudioClip[] audioClips;
 
     void Start()
     {
-        soundSource = GetComponent<AudioSource>();
+        source = GetComponent<AudioSource>();
     }
 
-    public void playSound()
+    public void PlaySound(int index)
     {
-        if (soundSource != null)
+        if (source == null)
         {
-            soundSource.Play();
+            Debug.LogWarning("Source not found");
         }
         else
         {
-            Debug.LogWarning("Sound not found");
+            if (index >= 0 && index < audioClips.Length)
+            {
+                source.PlayOneShot(audioClips[index]);
+            }
+            else
+            {
+                Debug.LogWarning("Index out of range of audioClips array");
+            }
         }
+    }
+
+    public void PlayAppleSound()
+    {
+        PlaySound(0);
+    }
+
+    public void PlayPickupSound()
+    {
+        PlaySound(1);
+    }
+    public void PlayShootSound()
+    {
+        PlaySound(2);
+    }
+
+    public void PlayLaughSound()
+    {
+        PlaySound(3);
     }
 
 }

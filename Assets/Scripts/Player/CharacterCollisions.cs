@@ -18,15 +18,20 @@ public class CharacterCollisions : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         string objTag = other.gameObject.tag;
-        Debug.Log("Objtag = " + objTag);
+        //Debug.Log("Objtag = " + objTag);
         if (objTag == "Apple")
         {
             CharacterManager.hunger += 5;
-            soundManager.playSound();
+            soundManager.PlayAppleSound();
         }
         else if (objTag == "Enemy") { CharacterManager.hp -= 15; }
-        else if (objTag == "Untagged") { Debug.Log("Untagged Collision"); }
+        else if (objTag == "Untagged")
+        {
+            //Debug.Log("Untagged Collision");
+            soundManager.PlayPickupSound();
+        }
         else
         {
 
@@ -35,9 +40,11 @@ public class CharacterCollisions : MonoBehaviour
 
             if (CharacterManager.daysPassed > 5)
             {
+
                 CharacterManager.daysPassed = 0;
                 gameManager game = FindObjectOfType<gameManager>();
-                Debug.Log("You win!!!");
+                // Debug.Log("You win!!!");
+
                 letsago = true;
                 game.EndGame();
 

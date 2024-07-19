@@ -408,7 +408,7 @@ PrefabInstance:
     - target: {fileID: 2636005446654863109, guid: 8f44da8dce19a3941a2b61ca43a45165, type: 3}
       propertyPath: panelPause
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4334860939486035457, guid: b7dd2c1fa1da4a340a68a451cef56656, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

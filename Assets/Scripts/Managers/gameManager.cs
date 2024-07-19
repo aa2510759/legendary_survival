@@ -8,10 +8,9 @@ public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
 
+    public SoundManager soundManager;
+
     public static bool isGameEnd = false;
-
-
-
 
     public GameObject charMan;
     void Awake()
@@ -45,10 +44,12 @@ public class gameManager : MonoBehaviour
     public void EndGame()
     {
         CharacterManager.hp = 0;
-        UnityEngine.Debug.Log("Ending Game...");
+        //UnityEngine.Debug.Log("Ending Game...");
         isGameEnd = true;
         charMan = GameObject.FindWithTag("CharacterManager");
         Destroy(charMan);
+        soundManager.PlayLaughSound();
         SceneManager.LoadScene(5);
+
     }
 }

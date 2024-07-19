@@ -20,7 +20,7 @@ public class buttonSpriteChanger : MonoBehaviour
     {
         spriteTag = transform.parent.gameObject.tag;
         VariableManager.SetActive(true);
-        UnityEngine.Debug.Log(spriteTag);
+        //UnityEngine.Debug.Log(spriteTag);
         SceneManager.LoadScene("Main Room");
     }
 }
