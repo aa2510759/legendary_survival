@@ -11,6 +11,7 @@ public class CharacterCollisions : MonoBehaviour
 {
     public MenuLogic menu;
     public CharacterShoot characterShoot;
+    public SoundManager soundManager;
     public static bool letsago = false;
 
 
@@ -19,7 +20,11 @@ public class CharacterCollisions : MonoBehaviour
     {
         string objTag = other.gameObject.tag;
         Debug.Log("Objtag = " + objTag);
-        if (objTag == "Apple") { CharacterManager.hunger += 5; }
+        if (objTag == "Apple")
+        {
+            CharacterManager.hunger += 5;
+            soundManager.playSound();
+        }
         else if (objTag == "Enemy") { CharacterManager.hp -= 15; }
         else if (objTag == "Untagged") { Debug.Log("Untagged Collision"); }
         else

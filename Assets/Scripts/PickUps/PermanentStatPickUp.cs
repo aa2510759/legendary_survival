@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PermanentStatPickUp : MonoBehaviour
 {
+
+
     [Header("Type of PickUp")]
     public bool maxHealth = false;
     public bool health = false;
