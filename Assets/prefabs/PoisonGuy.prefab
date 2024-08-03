@@ -177,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 500
   Damage: 10
+  goldItemDrop: {fileID: 4943493330156686985, guid: 2edf3b961b101d640a96beef84c59239, type: 3}
 --- !u!1 &5590492155343741977
 GameObject:
   m_ObjectHideFlags: 0

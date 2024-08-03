@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class PermanentStatPickUp : MonoBehaviour
@@ -95,11 +96,17 @@ public class PermanentStatPickUp : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D col)
     {
 
-        TypeCheck();
-        Destroy(gameObject);
+        if (col.gameObject.CompareTag("Player"))
+        {
+
+            TypeCheck();
+            Destroy(gameObject);
+        }
+
+        
     }
 
 
