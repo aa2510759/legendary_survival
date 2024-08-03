@@ -2232,6 +2232,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RandomMapManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8945158170584996792, guid: 98cc9ca6219ea234c8a4c75de68a8151, type: 3}
+      propertyPath: spawnCustom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945158170584996792, guid: 98cc9ca6219ea234c8a4c75de68a8151, type: 3}
+      propertyPath: obj.Array.data[0]
+      value: 
+      objectReference: {fileID: 8367493145386014390, guid: 06e8f4f025aeb7e429b6258ff145b76f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
