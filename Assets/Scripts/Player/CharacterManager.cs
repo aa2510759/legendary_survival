@@ -57,6 +57,10 @@ public class CharacterManager : MonoBehaviour
     public static int daysPassed = 0; //making it static and public so we can access it from other scripts
 
     public static CharacterManager instance;
+    [SerializeField] private AnimatorOverrideController[] overrideControllers; //for different sprite animations 
+  //  public Animator characterAnim;
+    public static Animator characterAnimReference;
+    
 
     Player Hunter = new Player("", "Hunter", 200, 80, 50, 80, 80, 80, 80);
     Player Mercenary = new Player("", "Mercenary", 150, 90, 50, 90, 90, 90, 90);
@@ -104,13 +108,52 @@ public class CharacterManager : MonoBehaviour
 
     void Start()
     {
+     //   print("Looking for character Animator");
+     
+        
+
 
         spriteChoice = buttonSpriteChanger.spriteTag;
+       // CharacterControls.charObj = GameObject.Find("Character");
+     //  while(characterAnimReference == null)
+       // {
+          
+       //     print("bruh");
+     //   }
+        
         decideClass();
     }
     void Update()
     {
+        
+        //  characterAnim = player.GetComponent<Animator>();
+       
+        if (CharacterControls.charObj != null && spriteChoice != null)
+        {
+             
 
+            switch (spriteChoice)
+            {
+                case "Mercenary":
+                    characterAnimReference = CharacterControls.charObj.GetComponent<Animator>();
+                    characterAnimReference.runtimeAnimatorController = overrideControllers[0];
+                    break;
+                case "Cop":
+                    characterAnimReference = CharacterControls.charObj.GetComponent<Animator>();
+                    characterAnimReference.runtimeAnimatorController = overrideControllers[1];
+                    break;
+                case "Hunter":
+                    characterAnimReference = CharacterControls.charObj.GetComponent<Animator>();
+                    characterAnimReference.runtimeAnimatorController = overrideControllers[2];
+                    break;
+
+                default:
+                    print("something went wrong idk what");
+                    break;
+            }
+        }
+
+       
         x = transform.position.x;
         y = transform.position.y;
     }

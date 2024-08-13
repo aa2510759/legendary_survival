@@ -1528,6 +1528,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6c3a85e0774524bac3c1c380fc37d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overrideControllers:
+  - {fileID: 22100000, guid: f1dd32c6ac6d8244dbfc10bad251c93f, type: 2}
+  - {fileID: 22100000, guid: 25f2904958001b740a696986ca4d4fbf, type: 2}
+  - {fileID: 22100000, guid: 4a82abb0bb303944d8d00d98e69f3e75, type: 2}
 --- !u!4 &1696233515
 Transform:
   m_ObjectHideFlags: 0

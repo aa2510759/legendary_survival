@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class CharacterControls : MonoBehaviour
 {
+    public static GameObject charObj;
     public MenuLogic menu;
     public CharacterShoot characterShoot;
     public Rigidbody2D myRigidbody;
@@ -21,6 +22,8 @@ public class CharacterControls : MonoBehaviour
 
     void Start()
     {
+        charObj = this.gameObject;
+        print(charObj);
         characterShoot = GetComponent<CharacterShoot>();
 
         if (characterShoot == null)
@@ -51,6 +54,7 @@ public class CharacterControls : MonoBehaviour
     void FixedUpdate()
     {
         Move(); //APPLYING MOVEMENT IF INPUT WAS DETECTED
+        UpdateAnimation(); // Check if the character is moving and update the animation
     }
 
     void ProcessInputs()
@@ -72,6 +76,8 @@ public class CharacterControls : MonoBehaviour
             soundManager.PlayShootSound();
             characterShoot.Shoot();
         }
+
+       
     }
 
     void Move()
@@ -79,5 +85,23 @@ public class CharacterControls : MonoBehaviour
         myRigidbody.velocity = new Vector2(moveDirection.x * (Speed + CharacterManager.speed), moveDirection.y * (Speed + CharacterManager.speed)) * Time.deltaTime;
         // print("Based Speed: " + Speed +
         //   "Speed Buff: " + CharacterManager.speed);
+        
+    }
+
+    void UpdateAnimation()
+    {
+        
+        bool isMoving = moveDirection != Vector2.zero;
+
+        // Update the Walking boolean in the Animator
+        if(CharacterManager.characterAnimReference != null)
+        {
+            CharacterManager.characterAnimReference.SetBool("Walking", isMoving);
+        }
+        else
+        {
+            print("Animator is null " + CharacterManager.characterAnimReference);
+        }
+         
     }
 }
