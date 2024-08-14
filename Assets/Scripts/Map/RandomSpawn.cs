@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class RandomSpawn : MonoBehaviour
 {
     public GameObject[] obj;
@@ -14,6 +14,8 @@ public class RandomSpawn : MonoBehaviour
     public Vector2 vector2;
 
     public int randomSpawnAmount;
+
+    public int randomCustomSpawnAmount; //unused at the moemnt
 
     public bool spawnCustom = true;
 
@@ -27,7 +29,7 @@ public class RandomSpawn : MonoBehaviour
 
 
         //Merchant spawn IF STATEMENT RIGHT HERE ************
-        if(spawnCustom == true && (randomSpawnAmount % 2) == 0)
+        if(spawnCustom == true && SceneManager.GetActiveScene().name == "Forest") //&& (randomSpawnAmount % 2) == 0
         {
             spawnCustom = false;
             GameObject clone = Instantiate(obj[1]);
@@ -40,7 +42,21 @@ public class RandomSpawn : MonoBehaviour
             clone.transform.position = vector2;
         }
 
-        for (int i = 0; i < randomSpawnAmount; i++)
+        //
+        if (spawnCustom == true && (randomSpawnAmount % 2) == 0)
+        {
+            spawnCustom = false;
+            GameObject clone = Instantiate(obj[1]);
+
+            customX = 3;
+            customY = 2;
+
+            vector2 = new Vector2(customX, customY);
+
+            clone.transform.position = vector2;
+        }
+
+            for (int i = 0; i < randomSpawnAmount; i++)
         {
             //print("Tree should spawn here");
             GameObject clone = Instantiate(obj[0]);
