@@ -5,8 +5,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
+
 public class Player
 {
+
+
     private string name;
     private string character;
     private int maxHp;
@@ -17,6 +21,7 @@ public class Player
     private int defense;
     private int gold;
 
+    
 
     // Class methods
     public void setName(string name) { this.name = name; }
@@ -56,7 +61,11 @@ public class CharacterManager : MonoBehaviour
 {
     public static int daysPassed = 0; //making it static and public so we can access it from other scripts
 
+    //public CharacterManager refInstance;
     public static CharacterManager instance;
+     
+     public  GunScript[] weaponInventory = new GunScript[] { null,null,null,null};
+
     [SerializeField] private AnimatorOverrideController[] overrideControllers; //for different sprite animations 
   //  public Animator characterAnim;
     public static Animator characterAnimReference;
@@ -76,6 +85,19 @@ public class CharacterManager : MonoBehaviour
     public static float gold = 50;
     public static float x = 0;
     public static float y = 0;
+
+    public bool gunEquipped = false;
+    public GunScript currentGun;
+
+    public enum slotEquipped
+    {
+        Slot_1,
+        Slot_2,
+        Slot_3,
+        Slot_4
+    }
+
+    public slotEquipped currentState;
 
     void decideClass()
     {
@@ -108,9 +130,10 @@ public class CharacterManager : MonoBehaviour
 
     void Start()
     {
-     //   print("Looking for character Animator");
-     
-        
+       
+        //   print("Looking for character Animator");
+
+     //   instance = refInstance;
 
 
         spriteChoice = buttonSpriteChanger.spriteTag;
