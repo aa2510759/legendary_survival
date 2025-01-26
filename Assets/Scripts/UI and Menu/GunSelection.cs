@@ -48,6 +48,7 @@ public class GunSelection : MonoBehaviour
         {
             if(charShoot.charManager.weaponInventory[i] != null)
             {
+                weaponSlotImages[i].sprite = charShoot.charManager.weaponInventory[i].GetComponent<SpriteRenderer>().sprite;
                 gunNameInv[i].text = charShoot.charManager.weaponInventory[i].gunName;
                 gunAmmoText[i].text = "Ammo: " + charShoot.charManager.weaponInventory[i].Ammo;
             }

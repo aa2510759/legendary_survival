@@ -24,6 +24,8 @@ public class PermanentStatPickUp : MonoBehaviour
 
     public bool weapon = false;
 
+     
+
     [Header("Increase Amount")]
 
     public int MaxHp = 0;
@@ -137,7 +139,7 @@ public class PermanentStatPickUp : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
 
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player")  )
         {
 
              
@@ -169,6 +171,8 @@ public class PermanentStatPickUp : MonoBehaviour
 
         
     }
+
+   
 
 
 }

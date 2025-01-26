@@ -13,6 +13,7 @@ public class CharacterShoot : MonoBehaviour
 
     public void Start()
     {
+        /*
         print("AYE CHARACTERSHOOT JUST RAN");
         charManager = GameObject.Find("CharacterManager").GetComponent<CharacterManager>();
 
@@ -40,8 +41,38 @@ public class CharacterShoot : MonoBehaviour
 
             GameObject.Find("ShootPoint").GetComponent<SpriteRenderer>().sprite = currentGunSprite.sprite;
         }
+        */
     }
+    public void Update()
+    {
+       // print("AYE CHARACTERSHOOT JUST RAN");
+        charManager = GameObject.Find("CharacterManager").GetComponent<CharacterManager>();
 
+        if (CharacterManager.instance.currentState == CharacterManager.slotEquipped.Slot_1 && charManager.gunEquipped == true && GameObject.Find("Canvas").GetComponent<GunSelection>().weaponSlotImages[0].sprite != null)
+        {
+            currentGunSprite.sprite = GameObject.Find("Canvas").GetComponent<GunSelection>().weaponSlotImages[0].sprite;
+
+            GameObject.Find("ShootPoint").GetComponent<SpriteRenderer>().sprite = currentGunSprite.sprite;
+        }
+        else if (CharacterManager.instance.currentState == CharacterManager.slotEquipped.Slot_2 && charManager.gunEquipped == true)
+        {
+            currentGunSprite.sprite = GameObject.Find("Canvas").GetComponent<GunSelection>().weaponSlotImages[1].sprite;
+
+            GameObject.Find("ShootPoint").GetComponent<SpriteRenderer>().sprite = currentGunSprite.sprite;
+        }
+        else if (CharacterManager.instance.currentState == CharacterManager.slotEquipped.Slot_3 && charManager.gunEquipped == true)
+        {
+            currentGunSprite.sprite = GameObject.Find("Canvas").GetComponent<GunSelection>().weaponSlotImages[2].sprite;
+
+            GameObject.Find("ShootPoint").GetComponent<SpriteRenderer>().sprite = currentGunSprite.sprite;
+        }
+        else if (CharacterManager.instance.currentState == CharacterManager.slotEquipped.Slot_4 && charManager.gunEquipped == true)
+        {
+            currentGunSprite.sprite = GameObject.Find("Canvas").GetComponent<GunSelection>().weaponSlotImages[3].sprite;
+
+            GameObject.Find("ShootPoint").GetComponent<SpriteRenderer>().sprite = currentGunSprite.sprite;
+        }
+    }
     public void Shoot()
     {
         if (charManager.gunEquipped == true && charManager.currentGun != null)
