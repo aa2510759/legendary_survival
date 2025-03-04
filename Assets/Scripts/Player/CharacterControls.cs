@@ -12,6 +12,9 @@ public class CharacterControls : MonoBehaviour
 
 
     public static GameObject charObj;
+
+    public static Vector3 charNextScenePosition;
+
     public MenuLogic menu;
     public CharacterShoot characterShoot;
     public Rigidbody2D myRigidbody;
@@ -36,6 +39,9 @@ public class CharacterControls : MonoBehaviour
     void Start()
     {
         charObj = this.gameObject;
+
+        charObj.transform.position = charNextScenePosition;
+
         print(charObj);
         characterShoot = GetComponent<CharacterShoot>();
 
@@ -55,6 +61,13 @@ public class CharacterControls : MonoBehaviour
         }
         else Debug.Log("gameObject not found..");
 
+
+        
+    }
+
+    public static void SetNewPositionForNewScene(Vector3 newPos)
+    {
+        charNextScenePosition = newPos;
     }
 
     void Update()

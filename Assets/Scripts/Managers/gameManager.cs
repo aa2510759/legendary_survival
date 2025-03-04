@@ -41,9 +41,11 @@ public class gameManager : MonoBehaviour
 
 
     }
+
     public void EndGame()
     {
         CharacterManager.hp = 0;
+        CharacterControls.charNextScenePosition = new Vector3(0,0,0);
         //UnityEngine.Debug.Log("Ending Game...");
         isGameEnd = true;
         charMan = GameObject.FindWithTag("CharacterManager");
