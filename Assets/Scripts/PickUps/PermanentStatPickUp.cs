@@ -8,9 +8,12 @@ public class PermanentStatPickUp : MonoBehaviour
 {
     public GunSelection gunUI;
 
+    
+
     public void Start()
     {
         gunUI = GameObject.Find("Canvas").GetComponent<GunSelection>();
+      //  healingEffect = GameObject.Find("Healing");
     }
 
     [Header("Type of PickUp")]
@@ -24,7 +27,7 @@ public class PermanentStatPickUp : MonoBehaviour
 
     public bool weapon = false;
 
-     
+    public bool ammo = false;
 
     [Header("Increase Amount")]
 
@@ -36,21 +39,33 @@ public class PermanentStatPickUp : MonoBehaviour
     public int Atk = 0;
     public int money = 0;
 
+    public int ammoAmount = 0;
+
     public void IncreaseMaxHPStat()
     {
         CharacterManager.maxHP += MaxHp;
 
     }
 
-    public void IncreaseHPStat()
+    public IEnumerator IncreaseHPStat()
     {
         if (CharacterManager.maxHP < CharacterManager.hp + Hp)
         {
             CharacterManager.hp = CharacterManager.maxHP;
+            print("SFDHBDS");
+            print(CharacterControls.instance.healingEffect);
+            CharacterControls.instance.healingEffect.SetActive(true);
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            yield return new WaitForSeconds(2);
+            this.gameObject.SetActive(false);
+            CharacterControls.instance.healingEffect.SetActive(false);
         }
+
 
     }
 
+    
     public void IncreaseHungerStat()
     {
         CharacterManager.hunger += Food;
@@ -104,11 +119,19 @@ public class PermanentStatPickUp : MonoBehaviour
         }
     }
 
+    public void IncreaseAmmo()
+    {
+        print("PICK UP AMMO");
+        
+       
+
+    }
+
     public void TypeCheck()
     {
         if (health == true)
         {
-            IncreaseHPStat();
+            StartCoroutine( IncreaseHPStat());
         }
         else if (hunger == true)
         {
@@ -134,7 +157,14 @@ public class PermanentStatPickUp : MonoBehaviour
         {
        //     addWeaponToInventory();
         }
+        else if(ammo == true)
+        {
+       //     IncreaseAmmo();
+        }
+
     }
+
+   
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -161,16 +191,40 @@ public class PermanentStatPickUp : MonoBehaviour
                 }
                  
             }
+            else if(ammo == true)
+            {
+            //    if(CharacterManager.instance.weaponInventory[0] == null && CharacterManager.instance.weaponInventory[1] == null
+             //       && CharacterManager.instance.weaponInventory[2] == null && CharacterManager.instance.weaponInventory[3] == null)
+            //    {
+             //       print("NO GUN TO TAKE THE AMMO");
+           //     }
+                 
+
+                    if (CharacterManager.instance.currentGun != null)
+                    {
+                        CharacterManager.instance.currentGun.Ammo += ammoAmount;
+                    Destroy(gameObject);
+                    }
+                   
+                   
+                 
+            }
             else
             {
+                 
                 TypeCheck();
-                Destroy(gameObject);
+              //  Destroy(gameObject);
             }
             
+
+
         }
 
         
     }
+
+
+
 
    
 

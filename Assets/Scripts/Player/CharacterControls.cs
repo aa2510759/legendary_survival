@@ -9,9 +9,11 @@ using UnityEngine.SceneManagement;
 public class CharacterControls : MonoBehaviour
 {
 
-
+    public static CharacterControls instance;
 
     public static GameObject charObj;
+
+    public GameObject healingEffect;
 
     public static Vector3 charNextScenePosition;
 
@@ -30,7 +32,29 @@ public class CharacterControls : MonoBehaviour
     public bool leftBulletForce = false;
     public bool rightBulletForce = false;
 
-    
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
+    }
+    public IEnumerator healthFunction;
+    public IEnumerator IncreaseHPStat(int Hp, GameObject obj)
+    {
+
+        healthFunction = IncreaseHPStat(Hp, obj);
+        StartCoroutine(healthFunction);
+        if (CharacterManager.maxHP < CharacterManager.hp + Hp && healthFunction != null)
+        {
+            CharacterManager.hp = CharacterManager.maxHP;
+            print("SFDHBDS");
+            print(CharacterControls.instance.healingEffect);
+            CharacterControls.instance.healingEffect.SetActive(true);
+            obj.SetActive(false);
+            yield return new WaitForSeconds(2);
+
+            CharacterControls.instance.healingEffect.SetActive(false);
+        }
+    }
 
 
     //public bool downBulletForce = false;
@@ -38,6 +62,7 @@ public class CharacterControls : MonoBehaviour
 
     void Start()
     {
+         
         charObj = this.gameObject;
 
         charObj.transform.position = charNextScenePosition;
