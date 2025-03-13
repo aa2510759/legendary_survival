@@ -37,24 +37,8 @@ public class CharacterControls : MonoBehaviour
         if (instance == null) instance = this;
         else Destroy(gameObject);
     }
-    public IEnumerator healthFunction;
-    public IEnumerator IncreaseHPStat(int Hp, GameObject obj)
-    {
-
-        healthFunction = IncreaseHPStat(Hp, obj);
-        StartCoroutine(healthFunction);
-        if (CharacterManager.maxHP < CharacterManager.hp + Hp && healthFunction != null)
-        {
-            CharacterManager.hp = CharacterManager.maxHP;
-            print("SFDHBDS");
-            print(CharacterControls.instance.healingEffect);
-            CharacterControls.instance.healingEffect.SetActive(true);
-            obj.SetActive(false);
-            yield return new WaitForSeconds(2);
-
-            CharacterControls.instance.healingEffect.SetActive(false);
-        }
-    }
+    
+    
 
 
     //public bool downBulletForce = false;
